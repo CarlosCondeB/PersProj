@@ -1,0 +1,176 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #f3f5fc;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.logo {
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+}
+
+main {
+    margin: 2% 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.textin {
+    margin-top: 5rem;
+}
+
+.textin .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.textin-table {
+    height: 70%;
+    background-color: transparent;
+    border: none;
+    resize: none;
+    color: #0a3871;
+    font-size: 2rem;
+    line-height: 150%;
+    text-transform: lowercase;
+}
+
+.textin-table:focus {
+    outline: none;
+}
+
+.textin-table::placeholder {
+    color: #0a3871;
+}
+
+.textin-alert {
+    display: flex;
+}
+
+.textin-alert h6 {
+    margin-left: 5px;
+}
+
+.textin-buttons {
+    margin-top: 10px;
+}
+
+button {
+    width: 250px;
+    height: 67px;
+    border-radius: 24px;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 19px;
+}
+
+button:hover {
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.btn1 {
+    background-color: #0a3871;
+    margin-right: 2rem;
+    color: white;
+}
+
+.btn2 {
+    border: 1px solid #0a3871;
+    color: #0a3871;
+}
+
+.textout {
+    width: min-content;
+    height: 85vh;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.textout-table {
+    width: 20rem;
+    height: 75%;
+    padding: 1rem 1rem 0;
+    background-image: url("../assets/Munieco.svg");
+    background-size: contain;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 20px;
+    font-size: 2rem;
+    color: #0a3871;
+    resize: none;
+}
+
+.textout-table:focus {
+    outline: none;
+}
+
+.textout-table:hover {
+    cursor: default;
+}
+
+.textout-mensaje1 {
+    margin: 0 1rem 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 120%;
+    color: #343a40;
+}
+
+.textout-mensaje2 {
+    margin: 0 1rem 1rem;
+    line-height: 150%;
+    color: #495057;
+}
+
+.btn3 {
+    display: none;
+    border: 1px solid #0a3871;
+    color: #0a3871;
+    margin-top: 3.5rem;
+}
+
+.footer {
+    width: 100%;
+    padding: 0 25%;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    bottom: 0;
+    background-color: #0a3871;
+    font-size: 1.5rem;
+}
+
+.footer .redes {
+    display: flex;
+    align-items: center;
+}
+
+.redes li {
+    margin-left: 10px;
+}
+
+.footer img {
+    height: 2.5rem;
+}
+
+/*
+@media screen and (max-width: 740px) {
+}  */

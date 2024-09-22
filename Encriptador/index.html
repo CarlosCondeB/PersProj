@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador Alura</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="assets/Logo.svg" alt="" class="logo">
+    </header>
+
+    <main>
+        <section class="textin">
+            <div class="container">
+                <textarea class="textin-table" id="mensaje" placeholder="Ingrese su texto aqui..."></textarea>
+
+                <div>
+                    <div class="textin-alert">
+                        <img src="assets/Vector.svg" alt="" class="admiration-mark">
+                        <h6>Solo letras minusculas y sin acentos</h6>
+                    </div>
+                    <div class="textin-buttons">
+                        <button class="btn1" id="encriptar" onclick="encriptar()">Encriptar</button>
+                        <button class="btn2" id="desencriptar" onclick="desencriptar()">Desencriptar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="textout">
+            <textarea class="textout-table" id="resultado" readonly></textarea>
+            <p class="textout-mensaje1" id="ocultar1">Ningun mensaje fue encontrado</p>
+            <p class="textout-mensaje2" id="ocultar2">Ingresa el texto que deseas encriptar o desencriptar</p>
+            <button class="btn3" id="copiar" onclick="copiar()">Copiar</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h3 class="title">Dev by Carco</h3>
+        <ul class="redes">
+            <li>Social: </li>
+            <li><a href="https://github.com/CarlosCondeB" target="_blank"><img src="assets/github.svg"
+                        alt="Logo Github"></a></li>
+            <li><a href="https://www.linkedin.com/in/carlos-conde-wd/" target="_blank"><img src="assets/linkedin.svg"
+                        alt="Logo Linkedin"></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function ocultar(mensaje, resultado) {
+            if (mensaje == "") {
+                resultado.value = "";
+                resultado.style.backgroundImage = 'url("file:///C:/Users/carli/Documents/git-files/projects/Encriptador/assets/Munieco.svg")';
+                document.getElementById("copiar").style.display = "none";
+                document.getElementById("ocultar1").style.display = "block";
+                document.getElementById("ocultar2").style.display = "block";
+                return true;
+            }
+            else {
+                resultado.style.backgroundImage = "none";
+                document.getElementById("copiar").style.display = "inline-block";
+                document.getElementById("ocultar1").style.display = "none";
+                document.getElementById("ocultar2").style.display = "none";
+                return false;
+            }
+        }
+
+        function encriptar() {
+            let mensaje = document.getElementById("mensaje").value;
+            let resultado = document.getElementById("resultado");
+            let encriptado = "";
+
+            if (ocultar(mensaje, resultado)) {
+                return;
+            }
+
+            for (const letter of mensaje) {
+                switch (letter) {
+                    case "a":
+                        encriptado += "ai";
+                        break;
+                    case "e":
+                        encriptado += "enter";
+                        break;
+                    case "i":
+                        encriptado += "imes";
+                        break;
+                    case "o":
+                        encriptado += "ober";
+                        break;
+                    case "u":
+                        encriptado += "ufat";
+                        break;
+                    default:
+                        encriptado += letter;
+                        break;
+                }
+            }
+            resultado.value = encriptado;
+        }
+
+        function desencriptar() {
+            let mensaje = document.getElementById("mensaje").value;
+            let resultado = document.getElementById("resultado");
+
+            if (ocultar(mensaje, resultado)) {
+                return;
+            }
+
+            mensaje = mensaje.replaceAll("ai", "a");
+            mensaje = mensaje.replaceAll("enter", "e");
+            mensaje = mensaje.replaceAll("imes", "i");
+            mensaje = mensaje.replaceAll("ober", "o");
+            mensaje = mensaje.replaceAll("ufat", "u");
+            resultado.value = mensaje;
+        }
+
+        function copiar() {
+            let resultado = document.getElementById("resultado");
+            resultado.select();
+            document.execCommand('copy');
+            alert("Texto copiado");
+        }
+    </script>
+
+</body>
+
+</html>
